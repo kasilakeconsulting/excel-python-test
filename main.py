@@ -56,6 +56,7 @@ else:
 
         print("\nUpdating...")
         wkRd = xlrd.open_workbook(filename)
+        # If you want to test the write, the xlutils package must be included to be able to copy.
         workbookWt = copy(wkRd)
         sheetWt = workbookWt.get_sheet(0)
 
