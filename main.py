@@ -9,7 +9,7 @@ from os import path
 from random import randint
 
 
-def output_bal_and_sum(filenameRd, sheetname):
+def output_balances(filenameRd, sheetname):
     workbookRd = xlrd.open_workbook(filenameRd)
 
     sheetRd = workbookRd.sheet_by_name(sheetname)
@@ -49,7 +49,7 @@ else:
         print("*** This is not a file: " + filePath)
     else:
         print("\nExisting sheet values:\n")
-        output_bal_and_sum(filename, "Sheet1")
+        output_balances(filename, "Sheet1")
 
         # BEGIN: If you cannot or do not want to use the xlwt package, delete the lines between here and END.
         # Update some values and save.
@@ -68,6 +68,6 @@ else:
         workbookWt.save(filename)
 
         print("\nRevised sheet values:\n")
-        output_bal_and_sum(filename, "Sheet1")
+        output_balances(filename, "Sheet1")
 
         # END: Delete up to here if you cannot or do not want to se ethe xlwt package.
